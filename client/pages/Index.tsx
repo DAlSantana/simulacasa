@@ -66,15 +66,16 @@ export default function Index() {
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Hero Section */}
           <div className="text-center space-y-6 mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
-              Encontre o Melhor
+            <h1 className="text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
+              Simulador de Financiamento Imobiliário
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 block">
-                Financiamento Imobiliário
+                Compare Caixa, Itaú, Bradesco e Santander
               </span>
-            </h2>
+            </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Compare as opções de financiamento dos principais bancos
-              brasileiros com cálculos precisos dos sistemas SAC e PRICE
+              Calcule e compare financiamentos imobiliários com sistemas SAC e
+              PRICE. Inclui subsídio Minha Casa Minha Vida da Caixa Econômica
+              Federal.
             </p>
           </div>
 
