@@ -79,8 +79,8 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto shadow-lg border-0 bg-gradient-to-br from-white to-slate-50">
-      <CardHeader className="text-center pb-6">
+    <Card className="w-full max-w-2xl mx-auto shadow-2xl border border-slate-200 bg-white rounded-2xl overflow-hidden">
+      <CardHeader className="text-center pb-8 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
         <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
           <Calculator className="w-8 h-8 text-white" />
         </div>
