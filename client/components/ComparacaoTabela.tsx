@@ -112,10 +112,10 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                           {result.method}
                         </Badge>
                       </TableCell>
-                      <TableCell className="text-right font-medium">
+                      <TableCell className="text-right font-medium py-4 px-6 border-r border-slate-100">
                         {formatCurrency(result.firstInstallment)}
                       </TableCell>
-                      <TableCell className="text-right font-medium">
+                      <TableCell className="text-right font-medium py-4 px-6 border-r border-slate-100">
                         <div className="flex items-center justify-end gap-1">
                           {formatCurrency(result.totalPaid)}
                           {isBestOption && (
@@ -123,7 +123,7 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                           )}
                         </div>
                       </TableCell>
-                      <TableCell className="text-right text-slate-600">
+                      <TableCell className="text-right text-slate-600 py-4 px-6">
                         {formatCurrency(result.totalInterest)}
                       </TableCell>
                     </TableRow>
