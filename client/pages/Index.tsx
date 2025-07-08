@@ -73,8 +73,9 @@ export default function Index() {
               </span>
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Calcule e compare financiamentos imobiliários com sistemas SAC e PRICE.
-              Inclui subsídio Minha Casa Minha Vida da Caixa Econômica Federal.
+              Calcule e compare financiamentos imobiliários com sistemas SAC e
+              PRICE. Inclui subsídio Minha Casa Minha Vida da Caixa Econômica
+              Federal.
             </p>
           </div>
 
@@ -113,38 +114,39 @@ export default function Index() {
                   <h3 className="text-xl font-semibold text-slate-800 mb-2">
                     Cálculos Precisos SAC e PRICE
                   </h3>
-                <p className="text-slate-600">
-                  Utilizamos as fórmulas oficiais dos sistemas SAC e PRICE com
-                  taxas atualizadas do mercado
-                </p>
-              </div>
-
-              <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-white" />
+                  <p className="text-slate-600">
+                    Utilizamos as fórmulas oficiais dos sistemas SAC e PRICE com
+                    taxas atualizadas do mercado
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                  Comparação Completa
-                </h3>
-                <p className="text-slate-600">
-                  Compare todos os principais bancos brasileiros lado a lado
-                  para tomar a melhor decisão
-                </p>
-              </div>
 
-              <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
+                <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                    Comparação Completa
+                  </h3>
+                  <p className="text-slate-600">
+                    Compare todos os principais bancos brasileiros lado a lado
+                    para tomar a melhor decisão
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                  Minha Casa Minha Vida
-                </h3>
-                <p className="text-slate-600">
-                  Inclui automaticamente o subsídio de R$ 30.000 da Caixa quando
-                  você é elegível
-                </p>
+
+                <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                    Minha Casa Minha Vida
+                  </h3>
+                  <p className="text-slate-600">
+                    Inclui automaticamente o subsídio de R$ 30.000 da Caixa
+                    quando você é elegível
+                  </p>
+                </div>
               </div>
-            </div>
+            </section>
           )}
         </div>
       </main>
@@ -153,11 +155,10 @@ export default function Index() {
       <footer className="bg-white/80 backdrop-blur-sm border-t border-slate-200 mt-16">
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-slate-600 space-y-2">
-            <p className="text-sm">
-              © Diego Santana 2025 - Personal Project
-            </p>
+            <p className="text-sm">© Diego Santana 2025 - Personal Project</p>
             <p className="text-xs text-slate-500">
-              Simulações baseadas em dados do mercado financeiro brasileiro. Os valores são estimativas.
+              Simulações baseadas em dados do mercado financeiro brasileiro. Os
+              valores são estimativas.
             </p>
           </div>
         </div>
