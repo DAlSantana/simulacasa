@@ -82,13 +82,15 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                   return (
                     <TableRow
                       key={index}
-                      className={`transition-colors hover:bg-slate-50 ${
+                      className={`transition-colors border-b border-slate-100 ${
+                        index % 2 === 0 ? "bg-white" : "bg-slate-25"
+                      } hover:bg-slate-50 ${
                         isBestOption
-                          ? "bg-green-50 border-l-4 border-green-500"
+                          ? "!bg-green-50 border-l-4 border-green-500"
                           : ""
                       }`}
                     >
-                      <TableCell className="font-medium text-slate-800">
+                      <TableCell className="font-medium text-slate-800 py-4 px-6 border-r border-slate-100">
                         <div className="flex items-center gap-2">
                           {result.bank}
                           {isBestOption && (
@@ -96,7 +98,7 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                           )}
                         </div>
                       </TableCell>
-                      <TableCell className="text-center">
+                      <TableCell className="text-center py-4 px-4 border-r border-slate-100">
                         <Badge
                           variant={
                             result.method === "SAC" ? "default" : "secondary"
