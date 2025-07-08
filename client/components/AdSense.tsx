@@ -89,16 +89,23 @@ export function AdSenseContent({ adSlot }: { adSlot: string }) {
           Publicidade
         </span>
       </div>
-      <AdSense
-        adSlot={adSlot}
-        adFormat="auto"
-        className="min-h-[120px] bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-center"
-        adStyle={{
-          display: "block",
-          textAlign: "center",
-          minHeight: "120px",
-        }}
-      />
+      <div className="relative min-h-[140px] bg-gradient-to-r from-slate-50 to-slate-100 border-2 border-dashed border-slate-300 rounded-xl flex items-center justify-center overflow-hidden">
+        <AdSense
+          adSlot={adSlot}
+          adFormat="auto"
+          className="w-full h-full"
+          adStyle={{
+            display: "block",
+            textAlign: "center",
+            minHeight: "140px",
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span className="text-slate-400 font-medium text-sm">
+            [Ad Placeholder]
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
