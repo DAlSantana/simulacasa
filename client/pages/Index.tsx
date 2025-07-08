@@ -62,8 +62,8 @@ export default function Index() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 lg:py-12">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <main className="container mx-auto px-4 py-8 lg:py-16">
+        <div className="max-w-7xl mx-auto space-y-16">
           {/* Hero Section */}
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
