@@ -65,7 +65,7 @@ export default function Index() {
       <main className="container mx-auto px-4 py-8 lg:py-16">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Hero Section */}
-          <div className="text-center space-y-4 mb-12">
+          <div className="text-center space-y-6 mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
               Encontre o Melhor
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 block">
