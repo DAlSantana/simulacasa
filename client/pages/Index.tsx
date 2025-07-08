@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { SimuladorForm } from "@/components/SimuladorForm";
 import { ComparacaoTabela } from "@/components/ComparacaoTabela";
+import {
+  AdSenseBanner,
+  AdSenseContent,
+  AdSenseMobileAnchor,
+} from "@/components/AdSense";
 import { LoanInput, LoanResult, calculateAllSimulations } from "@/lib/calculos";
 import { Building2, Shield, TrendingUp, Users } from "lucide-react";
 
