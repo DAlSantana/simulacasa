@@ -73,9 +73,8 @@ export default function Index() {
               </span>
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Calcule e compare financiamentos imobiliários com sistemas SAC e
-              PRICE. Inclui subsídio Minha Casa Minha Vida da Caixa Econômica
-              Federal.
+              Calcule e compare financiamentos imobiliários com sistemas SAC e PRICE.
+              Inclui subsídio Minha Casa Minha Vida da Caixa Econômica Federal.
             </p>
           </div>
 
@@ -102,14 +101,18 @@ export default function Index() {
 
           {/* Features */}
           {results.length === 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-              <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                  Cálculos Precisos
-                </h3>
+            <section>
+              <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">
+                Por que usar nosso simulador?
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                    Cálculos Precisos SAC e PRICE
+                  </h3>
                 <p className="text-slate-600">
                   Utilizamos as fórmulas oficiais dos sistemas SAC e PRICE com
                   taxas atualizadas do mercado
@@ -150,10 +153,11 @@ export default function Index() {
       <footer className="bg-white/80 backdrop-blur-sm border-t border-slate-200 mt-16">
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-slate-600 space-y-2">
-            <p className="text-sm">© Diego Santana 2025 - Personal Project</p>
+            <p className="text-sm">
+              © Diego Santana 2025 - Personal Project
+            </p>
             <p className="text-xs text-slate-500">
-              Simulações baseadas em dados do mercado financeiro brasileiro. Os
-              valores são estimativas.
+              Simulações baseadas em dados do mercado financeiro brasileiro. Os valores são estimativas.
             </p>
           </div>
         </div>
