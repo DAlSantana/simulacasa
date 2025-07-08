@@ -92,9 +92,9 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
         </p>
       </CardHeader>
 
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <CardContent className="p-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Valor do Imóvel */}
             <div className="space-y-2">
               <Label
