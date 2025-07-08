@@ -41,12 +41,12 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
     <div className="w-full space-y-6">
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-slate-50">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold text-slate-800 flex items-center justify-center gap-2">
+          <h2 className="text-2xl font-bold text-slate-800 flex items-center justify-center gap-2">
             <Banknote className="w-6 h-6 text-blue-500" />
-            Comparação de Financiamentos
-          </CardTitle>
+            Resultados da Simulação
+          </h2>
           <p className="text-slate-600">
-            Compare as opções SAC e PRICE dos principais bancos
+            Compare as melhores opções de financiamento SAC e PRICE por banco
           </p>
         </CardHeader>
 
