@@ -78,6 +78,9 @@ export default function Index() {
             </p>
           </div>
 
+          {/* AdSense Banner - Before Form */}
+          <AdSenseBanner adSlot="1234567890" />
+
           {/* Simulador Form */}
           <div className="flex justify-center">
             <SimuladorForm
