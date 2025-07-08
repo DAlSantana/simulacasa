@@ -136,4 +136,20 @@
   .backdrop-blur-sm {
     backdrop-filter: blur(8px);
   }
+
+  /* Add bottom padding on mobile to account for anchor ad */
+  @media (max-width: 1023px) {
+    body {
+      padding-bottom: 100px;
+    }
+  }
+
+  /* AdSense styling */
+  .adsense-container {
+    margin: 0 auto;
+  }
+
+  .adsense-container ins {
+    border: none !important;
+  }
 }
