@@ -1,62 +1,154 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { SimuladorForm } from "@/components/SimuladorForm";
+import { ComparacaoTabela } from "@/components/ComparacaoTabela";
+import { LoanInput, LoanResult, calculateAllSimulations } from "@/lib/calculos";
+import { Building2, Shield, TrendingUp, Users } from "lucide-react";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
+  const [results, setResults] = useState<LoanResult[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
+  const handleSimulation = async (input: LoanInput) => {
+    setIsLoading(true);
+
+    // Simula um pequeno delay para uma melhor UX
+    await new Promise((resolve) => setTimeout(resolve, 800));
+
+    const simulationResults = calculateAllSimulations(input);
+    setResults(simulationResults);
+    setIsLoading(false);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* Header */}
+      <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                <Building2 className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-slate-800">
+                  FinanceSimulator
+                </h1>
+                <p className="text-sm text-slate-600">
+                  Simulador de Financiamento
+                </p>
+              </div>
+            </div>
+            <div className="hidden md:flex items-center gap-6 text-sm text-slate-600">
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4 text-green-500" />
+                <span>Seguro e Confiável</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-blue-500" />
+                <span>Dados Atualizados</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4 text-purple-500" />
+                <span>4 Bancos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8 lg:py-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Hero Section */}
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
+              Encontre o Melhor
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 block">
+                Financiamento Imobiliário
+              </span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Compare as opções de financiamento dos principais bancos
+              brasileiros com cálculos precisos dos sistemas SAC e PRICE
+            </p>
+          </div>
+
+          {/* Simulador Form */}
+          <div className="flex justify-center">
+            <SimuladorForm
+              onSimulate={handleSimulation}
+              isLoading={isLoading}
             />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+          </div>
+
+          {/* Results */}
+          {results.length > 0 && (
+            <div className="animate-in slide-in-from-bottom-4 duration-500">
+              <ComparacaoTabela results={results} />
+            </div>
+          )}
+
+          {/* Features */}
+          {results.length === 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                  Cálculos Precisos
+                </h3>
+                <p className="text-slate-600">
+                  Utilizamos as fórmulas oficiais dos sistemas SAC e PRICE com
+                  taxas atualizadas do mercado
+                </p>
+              </div>
+
+              <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                  Comparação Completa
+                </h3>
+                <p className="text-slate-600">
+                  Compare todos os principais bancos brasileiros lado a lado
+                  para tomar a melhor decisão
+                </p>
+              </div>
+
+              <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-slate-200">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                  Minha Casa Minha Vida
+                </h3>
+                <p className="text-slate-600">
+                  Inclui automaticamente o subsídio de R$ 30.000 da Caixa quando
+                  você é elegível
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-white/80 backdrop-blur-sm border-t border-slate-200 mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center text-slate-600">
+            <p className="text-sm">
+              © 2024 FinanceSimulator. Simulações baseadas em dados do mercado
+              financeiro brasileiro.
+            </p>
+            <p className="text-xs mt-2 text-slate-500">
+              Os valores são estimativas e podem variar conforme análise de
+              crédito de cada instituição.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
