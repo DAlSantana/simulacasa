@@ -84,11 +84,12 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
         <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
           <Calculator className="w-8 h-8 text-white" />
         </div>
-        <CardTitle className="text-2xl font-bold text-slate-800">
-          Simulador de Financiamento Imobiliário
-        </CardTitle>
+        <h2 className="text-2xl font-bold text-slate-800">
+          Preencha os dados do seu financiamento
+        </h2>
         <p className="text-slate-600 mt-2">
-          Compare as melhores opções de financiamento dos principais bancos
+          Informe o valor do imóvel, entrada e prazo para calcular as melhores
+          opções
         </p>
       </CardHeader>
 
