@@ -144,6 +144,11 @@
     }
   }
 
+  /* Table styling */
+  .bg-slate-25 {
+    background-color: rgb(248 250 252 / 0.5);
+  }
+
   /* AdSense styling */
   .adsense-container {
     margin: 0 auto;
