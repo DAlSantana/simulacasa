@@ -91,8 +91,11 @@ export default function Index() {
 
           {/* Results */}
           {results.length > 0 && (
-            <div className="animate-in slide-in-from-bottom-4 duration-500">
+            <div className="animate-in slide-in-from-bottom-4 duration-500 space-y-8">
               <ComparacaoTabela results={results} />
+
+              {/* AdSense Content Ad - After Results */}
+              <AdSenseContent adSlot="0987654321" />
             </div>
           )}
 
