@@ -173,8 +173,10 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, termMonths: e.target.value })
                 }
-                className={`h-12 text-lg ${
-                  errors.termMonths ? "border-red-500" : ""
+                className={`h-14 text-lg px-4 rounded-xl border-2 transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 ${
+                  errors.termMonths
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                    : "border-slate-200 hover:border-slate-300"
                 }`}
               />
               {errors.termMonths && (
