@@ -1,3 +1,7 @@
+User-agent: *
+Allow: /
+
+# Specific bots
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +14,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap
+Sitemap: https://simulador-financiamento.vercel.app/sitemap.xml
