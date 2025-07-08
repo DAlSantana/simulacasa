@@ -52,23 +52,23 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
 
         <CardContent>
           {/* Versão Desktop */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block overflow-hidden rounded-lg border border-slate-200">
             <Table>
               <TableHeader>
-                <TableRow className="bg-slate-50">
-                  <TableHead className="font-semibold text-slate-700 w-24">
+                <TableRow className="bg-slate-100 border-b border-slate-200">
+                  <TableHead className="font-semibold text-slate-800 w-24 py-4 px-6 border-r border-slate-200">
                     Banco
                   </TableHead>
-                  <TableHead className="font-semibold text-slate-700 text-center w-20">
+                  <TableHead className="font-semibold text-slate-800 text-center w-20 py-4 px-4 border-r border-slate-200">
                     Método
                   </TableHead>
-                  <TableHead className="font-semibold text-slate-700 text-right">
+                  <TableHead className="font-semibold text-slate-800 text-right py-4 px-6 border-r border-slate-200">
                     1ª Parcela
                   </TableHead>
-                  <TableHead className="font-semibold text-slate-700 text-right">
+                  <TableHead className="font-semibold text-slate-800 text-right py-4 px-6 border-r border-slate-200">
                     Total Pago
                   </TableHead>
-                  <TableHead className="font-semibold text-slate-700 text-right">
+                  <TableHead className="font-semibold text-slate-800 text-right py-4 px-6">
                     Total Juros
                   </TableHead>
                 </TableRow>
