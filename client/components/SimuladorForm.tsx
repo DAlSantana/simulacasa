@@ -218,7 +218,7 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
           <Button
             type="submit"
             disabled={isLoading}
-            className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 shadow-lg transition-all duration-200"
+            className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200 rounded-xl"
           >
             {isLoading ? (
               <div className="flex items-center gap-2">
