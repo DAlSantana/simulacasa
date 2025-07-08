@@ -160,6 +160,9 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Mobile Anchor Ad */}
+      <AdSenseMobileAnchor adSlot="1357924680" />
     </div>
   );
 }
