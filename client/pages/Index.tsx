@@ -35,9 +35,9 @@ export default function Index() {
                 <Building2 className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-slate-800">
+                <span className="text-xl font-bold text-slate-800">
                   FinanceSimulator
-                </h1>
+                </span>
                 <p className="text-sm text-slate-600">
                   Simulador de Financiamento
                 </p>
