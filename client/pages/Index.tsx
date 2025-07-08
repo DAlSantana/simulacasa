@@ -147,15 +147,12 @@ export default function Index() {
 
       {/* Footer */}
       <footer className="bg-white/80 backdrop-blur-sm border-t border-slate-200 mt-16">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-slate-600">
-            <p className="text-sm">
-              © 2024 FinanceSimulator. Simulações baseadas em dados do mercado
-              financeiro brasileiro.
-            </p>
-            <p className="text-xs mt-2 text-slate-500">
-              Os valores são estimativas e podem variar conforme análise de
-              crédito de cada instituição.
+        <div className="container mx-auto px-4 py-6">
+          <div className="text-center text-slate-600 space-y-2">
+            <p className="text-sm">© Diego Santana 2025 - Personal Project</p>
+            <p className="text-xs text-slate-500">
+              Simulações baseadas em dados do mercado financeiro brasileiro. Os
+              valores são estimativas.
             </p>
           </div>
         </div>
