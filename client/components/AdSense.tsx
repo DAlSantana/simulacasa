@@ -113,23 +113,30 @@ export function AdSenseContent({ adSlot }: { adSlot: string }) {
 // Mobile anchor/sticky ad component
 export function AdSenseMobileAnchor({ adSlot }: { adSlot: string }) {
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 shadow-lg">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-slate-200 shadow-2xl">
       <div className="text-center py-1">
         <span className="text-xs text-slate-400 uppercase tracking-wide">
           Publicidade
         </span>
       </div>
-      <AdSense
-        adSlot={adSlot}
-        adFormat="auto"
-        className="min-h-[60px] max-h-[100px] overflow-hidden"
-        adStyle={{
-          display: "block",
-          textAlign: "center",
-          minHeight: "60px",
-          maxHeight: "100px",
-        }}
-      />
+      <div className="relative min-h-[70px] max-h-[100px] bg-gradient-to-r from-slate-50 to-slate-100 flex items-center justify-center overflow-hidden">
+        <AdSense
+          adSlot={adSlot}
+          adFormat="auto"
+          className="w-full h-full"
+          adStyle={{
+            display: "block",
+            textAlign: "center",
+            minHeight: "70px",
+            maxHeight: "100px",
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span className="text-slate-400 font-medium text-xs">
+            [Mobile Ad Placeholder]
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
