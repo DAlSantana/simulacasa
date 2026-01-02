@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { SimuladorForm } from "@/components/SimuladorForm";
 import { ComparacaoTabela } from "@/components/ComparacaoTabela";
-import {
-  AdSenseBanner,
-  AdSenseContent,
-  AdSenseMobileAnchor,
-} from "@/components/AdSense";
 import { LoanInput, LoanResult, calculateAllSimulations } from "@/lib/calculos";
 import { Building2, Shield, TrendingUp, Users } from "lucide-react";
 
@@ -78,9 +73,6 @@ export default function Index() {
               Federal.
             </p>
           </div>
-
-          {/* AdSense Banner - Before Form */}
-          <AdSenseBanner adSlot="1234567890" />
 
           {/* Simulador Form */}
           <div className="flex justify-center">
@@ -165,7 +157,6 @@ export default function Index() {
       </footer>
 
       {/* Mobile Anchor Ad */}
-      <AdSenseMobileAnchor adSlot="1357924680" />
     </div>
   );
 }
