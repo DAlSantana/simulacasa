@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Table,
@@ -7,12 +7,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import type { LoanResult } from '@/lib/calculos';
-import { formatCurrency } from '@/lib/calculos';
-import { TrendingDown, TrendingUp, Award, Banknote } from 'lucide-react';
+} from "@/components/ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import type { LoanResult } from "@/lib/calculos";
+import { formatCurrency } from "@/lib/calculos";
+import { TrendingDown, TrendingUp, Award, Banknote } from "lucide-react";
 
 interface ComparacaoTabelaProps {
   results: LoanResult[];
@@ -86,11 +86,11 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                     <TableRow
                       key={index}
                       className={`transition-colors border-b border-slate-100 ${
-                        index % 2 === 0 ? 'bg-white' : 'bg-slate-25'
+                        index % 2 === 0 ? "bg-white" : "bg-slate-25"
                       } hover:bg-slate-50 ${
                         isBestOption
-                          ? '!bg-green-50 border-l-4 border-green-500'
-                          : ''
+                          ? "!bg-green-50 border-l-4 border-green-500"
+                          : ""
                       }`}
                     >
                       <TableCell className="font-medium text-slate-800 py-4 px-6 border-r border-slate-100">
@@ -104,12 +104,12 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                       <TableCell className="text-center py-4 px-4 border-r border-slate-100">
                         <Badge
                           variant={
-                            result.method === 'SAC' ? 'default' : 'secondary'
+                            result.method === "SAC" ? "default" : "secondary"
                           }
                           className={
-                            result.method === 'SAC'
-                              ? 'bg-blue-100 text-blue-800 hover:bg-blue-200'
-                              : 'bg-purple-100 text-purple-800 hover:bg-purple-200'
+                            result.method === "SAC"
+                              ? "bg-blue-100 text-blue-800 hover:bg-blue-200"
+                              : "bg-purple-100 text-purple-800 hover:bg-purple-200"
                           }
                         >
                           {result.method}
@@ -150,7 +150,7 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {['SAC', 'PRICE'].map((method) => {
+                  {["SAC", "PRICE"].map((method) => {
                     const result = resultsByBank[bank][method];
                     if (!result) return null;
 
@@ -163,17 +163,17 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                         key={method}
                         className={`p-4 rounded-lg border ${
                           isBestOption
-                            ? 'bg-green-50 border-green-200'
-                            : 'bg-slate-50 border-slate-200'
+                            ? "bg-green-50 border-green-200"
+                            : "bg-slate-50 border-slate-200"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-3">
                           <Badge
-                            variant={method === 'SAC' ? 'default' : 'secondary'}
+                            variant={method === "SAC" ? "default" : "secondary"}
                             className={
-                              method === 'SAC'
-                                ? 'bg-blue-100 text-blue-800'
-                                : 'bg-purple-100 text-purple-800'
+                              method === "SAC"
+                                ? "bg-blue-100 text-blue-800"
+                                : "bg-purple-100 text-purple-800"
                             }
                           >
                             {method}
@@ -226,7 +226,7 @@ export function ComparacaoTabela({ results }: ComparacaoTabelaProps) {
                 decrescentes, amortização constante
               </div>
               <div>
-                <span className="font-medium text-purple-700">PRICE:</span>{' '}
+                <span className="font-medium text-purple-700">PRICE:</span>{" "}
                 Parcelas fixas, juros decrescentes
               </div>
             </div>

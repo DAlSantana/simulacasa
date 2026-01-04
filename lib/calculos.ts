@@ -1,4 +1,4 @@
-'use server';
+"use server";
 
 /**
  * Loan simulation calculation functions (pure functions, no React)
@@ -14,7 +14,7 @@ export interface LoanInput {
 
 export interface LoanResult {
   bank: string;
-  method: 'SAC' | 'PRICE';
+  method: "SAC" | "PRICE";
   loanAmount: number;
   monthlyRate: number;
   firstInstallment: number;
@@ -25,10 +25,10 @@ export interface LoanResult {
 
 // Interest rates by bank (simplified rates for demo)
 const INTEREST_RATES: Record<string, number> = {
-  'Caixa': 0.0729,      // 7.29% annual
-  'Itaú': 0.0750,       // 7.50% annual
-  'Bradesco': 0.0768,   // 7.68% annual
-  'Santander': 0.0745,  // 7.45% annual
+  Caixa: 0.0729, // 7.29% annual
+  Itaú: 0.075, // 7.50% annual
+  Bradesco: 0.0768, // 7.68% annual
+  Santander: 0.0745, // 7.45% annual
 };
 
 const BANKS = Object.keys(INTEREST_RATES);
@@ -113,7 +113,8 @@ export function calculateAllSimulations(input: LoanInput): LoanResult[] {
   const results: LoanResult[] = [];
 
   // Calculate loan amount after down payment and subsidy
-  const downPaymentAmount = input.propertyValue * (input.downPaymentPercentage / 100);
+  const downPaymentAmount =
+    input.propertyValue * (input.downPaymentPercentage / 100);
   let loanAmount = input.propertyValue - downPaymentAmount;
 
   // Apply subsidy only for Caixa if selected
@@ -122,7 +123,8 @@ export function calculateAllSimulations(input: LoanInput): LoanResult[] {
   }
 
   // Convert annual rate to monthly rate
-  const annualRateToMonthly = (annualRate: number) => Math.pow(1 + annualRate, 1/12) - 1;
+  const annualRateToMonthly = (annualRate: number) =>
+    Math.pow(1 + annualRate, 1 / 12) - 1;
 
   // Calculate for each bank
   for (const bank of BANKS) {
@@ -133,7 +135,7 @@ export function calculateAllSimulations(input: LoanInput): LoanResult[] {
     const sacResult = calculateSAC(loanAmount, monthlyRate, input.termMonths);
     results.push({
       bank,
-      method: 'SAC',
+      method: "SAC",
       loanAmount,
       monthlyRate,
       firstInstallment: sacResult.firstInstallment,
@@ -143,10 +145,14 @@ export function calculateAllSimulations(input: LoanInput): LoanResult[] {
     });
 
     // Calculate PRICE
-    const priceResult = calculatePRICE(loanAmount, monthlyRate, input.termMonths);
+    const priceResult = calculatePRICE(
+      loanAmount,
+      monthlyRate,
+      input.termMonths,
+    );
     results.push({
       bank,
-      method: 'PRICE',
+      method: "PRICE",
       loanAmount,
       monthlyRate,
       firstInstallment: priceResult.firstInstallment,
@@ -163,9 +169,9 @@ export function calculateAllSimulations(input: LoanInput): LoanResult[] {
  * Format currency for Brazilian Real
  */
 export function formatCurrency(value: number): string {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(value);
@@ -175,8 +181,8 @@ export function formatCurrency(value: number): string {
  * Format percentage
  */
 export function formatPercentage(value: number): string {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'percent',
+  return new Intl.NumberFormat("pt-BR", {
+    style: "percent",
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(value);

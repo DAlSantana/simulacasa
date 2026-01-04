@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState, Suspense, lazy } from 'react';
-import { SimuladorForm } from '@/components/SimuladorForm';
-import type { LoanInput, LoanResult } from '@/lib/calculos';
-import { calculateAllSimulations } from '@/lib/calculos';
+import { useState, Suspense, lazy } from "react";
+import { SimuladorForm } from "@/components/SimuladorForm";
+import type { LoanInput, LoanResult } from "@/lib/calculos";
+import { calculateAllSimulations } from "@/lib/calculos";
 
 /**
  * Lazy load the comparison table to minimize initial JS bundle
  * Only loaded after user submits the form (triggers simulation)
  */
 const ComparacaoTabela = lazy(() =>
-  import('@/components/ComparacaoTabela').then(mod => ({
+  import("@/components/ComparacaoTabela").then((mod) => ({
     default: mod.ComparacaoTabela,
-  }))
+  })),
 );
 
 /**
@@ -52,10 +52,7 @@ export function ClientSimulator() {
   return (
     <div className="space-y-12">
       <div className="flex justify-center">
-        <SimuladorForm
-          onSimulate={handleSimulation}
-          isLoading={isLoading}
-        />
+        <SimuladorForm onSimulate={handleSimulation} isLoading={isLoading} />
       </div>
 
       {/* Only render comparison table after results are available */}

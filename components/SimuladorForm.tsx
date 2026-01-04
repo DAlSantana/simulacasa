@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calculator, Home, Percent, Calendar } from 'lucide-react';
-import type { LoanInput } from '@/lib/calculos';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calculator, Home, Percent, Calendar } from "lucide-react";
+import type { LoanInput } from "@/lib/calculos";
 
 interface SimuladorFormProps {
   onSimulate: (input: LoanInput) => void;
@@ -16,9 +16,9 @@ interface SimuladorFormProps {
 
 export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
   const [formData, setFormData] = useState({
-    propertyValue: '',
-    downPaymentPercentage: '20',
-    termMonths: '360',
+    propertyValue: "",
+    downPaymentPercentage: "20",
+    termMonths: "360",
     hasMinhasCasaSubsidy: false,
   });
 
@@ -27,20 +27,20 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    const propertyValue = parseFloat(formData.propertyValue.replace(/\D/g, ''));
+    const propertyValue = parseFloat(formData.propertyValue.replace(/\D/g, ""));
     const downPayment = parseFloat(formData.downPaymentPercentage);
     const termMonths = parseInt(formData.termMonths);
 
     if (!propertyValue || propertyValue < 50000) {
-      newErrors.propertyValue = 'Valor mínimo de R$ 50.000';
+      newErrors.propertyValue = "Valor mínimo de R$ 50.000";
     }
 
     if (!downPayment || downPayment < 10 || downPayment > 80) {
-      newErrors.downPaymentPercentage = 'Entre 10% e 80%';
+      newErrors.downPaymentPercentage = "Entre 10% e 80%";
     }
 
     if (!termMonths || termMonths < 12 || termMonths > 420) {
-      newErrors.termMonths = 'Entre 12 e 420 meses';
+      newErrors.termMonths = "Entre 12 e 420 meses";
     }
 
     setErrors(newErrors);
@@ -53,7 +53,7 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
     if (!validateForm()) return;
 
     const input: LoanInput = {
-      propertyValue: parseFloat(formData.propertyValue.replace(/\D/g, '')),
+      propertyValue: parseFloat(formData.propertyValue.replace(/\D/g, "")),
       downPaymentPercentage: parseFloat(formData.downPaymentPercentage),
       termMonths: parseInt(formData.termMonths),
       hasMinhasCasaSubsidy: formData.hasMinhasCasaSubsidy,
@@ -63,11 +63,11 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
   };
 
   const formatCurrencyInput = (value: string) => {
-    const numbers = value.replace(/\D/g, '');
+    const numbers = value.replace(/\D/g, "");
     const amount = parseFloat(numbers) || 0;
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
@@ -115,8 +115,8 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
                 placeholder="R$ 300.000"
                 className={`h-14 text-lg px-4 rounded-xl border-2 transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 ${
                   errors.propertyValue
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
-                    : 'border-slate-200 hover:border-slate-300'
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                    : "border-slate-200 hover:border-slate-300"
                 }`}
               />
               {errors.propertyValue && (
@@ -147,8 +147,8 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
                 }
                 className={`h-14 text-lg px-4 rounded-xl border-2 transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 ${
                   errors.downPaymentPercentage
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
-                    : 'border-slate-200 hover:border-slate-300'
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                    : "border-slate-200 hover:border-slate-300"
                 }`}
               />
               {errors.downPaymentPercentage && (
@@ -178,8 +178,8 @@ export function SimuladorForm({ onSimulate, isLoading }: SimuladorFormProps) {
                 }
                 className={`h-14 text-lg px-4 rounded-xl border-2 transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 ${
                   errors.termMonths
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
-                    : 'border-slate-200 hover:border-slate-300'
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                    : "border-slate-200 hover:border-slate-300"
                 }`}
               />
               {errors.termMonths && (

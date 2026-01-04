@@ -1,13 +1,14 @@
-import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
-import { Building2 } from 'lucide-react';
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import { Building2 } from "lucide-react";
 
 /**
  * Lazy load the simulator (Client Component) to reduce initial JS bundle
  * ssr: false - Don't render on server, load only on client
  */
 const ClientSimulator = dynamic(
-  () => import('@/components/ClientSimulator').then(mod => mod.ClientSimulator),
+  () =>
+    import("@/components/ClientSimulator").then((mod) => mod.ClientSimulator),
   {
     ssr: false,
     loading: () => (
@@ -15,7 +16,7 @@ const ClientSimulator = dynamic(
         <SimulatorSkeleton />
       </div>
     ),
-  }
+  },
 );
 
 /**
@@ -82,7 +83,8 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Compare financiamentos com SAC e PRICE. Ferramenta gratuita com suporte a subsídio Minha Casa Minha Vida.
+            Compare financiamentos com SAC e PRICE. Ferramenta gratuita com
+            suporte a subsídio Minha Casa Minha Vida.
           </p>
         </section>
 
