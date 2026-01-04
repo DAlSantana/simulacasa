@@ -4,16 +4,19 @@ import { ComparacaoTabela } from "@/components/ComparacaoTabela";
 import { LoanInput, LoanResult, calculateAllSimulations } from "@/lib/calculos";
 import { Building2, Shield, TrendingUp, Users } from "lucide-react";
 
+
+export const metadata = {
+  title: "Simulador de Financiamento Imobiliário | Compare Bancos",
+  description:
+    "Compare financiamentos imobiliários com SAC e PRICE. Caixa, Itaú, Bradesco e Santander.",
+};
+
 export default function Index() {
   const [results, setResults] = useState<LoanResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSimulation = async (input: LoanInput) => {
     setIsLoading(true);
-
-    // Simula um pequeno delay para uma melhor UX
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
     const simulationResults = calculateAllSimulations(input);
     setResults(simulationResults);
     setIsLoading(false);
@@ -86,9 +89,6 @@ export default function Index() {
           {results.length > 0 && (
             <div className="animate-in slide-in-from-bottom-4 duration-500 space-y-8">
               <ComparacaoTabela results={results} />
-
-              {/* AdSense Content Ad - After Results */}
-              <AdSenseContent adSlot="0987654321" />
             </div>
           )}
 
